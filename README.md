@@ -16,7 +16,8 @@ Originally designed and developed by, it is now maintained by the Cloud Native C
 
 To understand more about the benefits of Kubernetes (K8), we can see how things have progressed over time (again, thanks to the wonderful K8 concept pages)
 
-<IMAGE>
+![container_evolution](container_evolution.svg "Container Evolution")
+
 
 This new way of working provides significant benefits over a “bare metal”, or “traditional” approach, namely around the concept of loosely coupled software development practises.
 
@@ -24,7 +25,7 @@ This new way of working provides significant benefits over a “bare metal”, o
 
 Yes, sort of. Docker has Docker Swarm which is also a “container orchestration system”, and given Docker is nearly always the containerisation technology of choice, why isn’t everyone using this?
 
-<IMAGE>  
+![swarm-diagram](swarm-diagram.png "Swarm")
   
 Well, this likely comes back to the principle identified above, loose coupling.
 
