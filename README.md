@@ -158,16 +158,73 @@ followed up by a series of exercises against it
 * [Tutorial 2](https://github.com/fat-potato-uk/k8s-demo-2): This looks to go further into the concepts covered above as
 well as use of tools like Helm
 
-### Kube.config
-
-
 ### K8 Components
 
--> API Server (Node Roles)
--> etcd
--> DNS
--> Kubelet
--> kube-proxy
+So, what are the components of a Kubernetes cluster?
+
+You can visualize a Kubernetes cluster as two parts: the control plane and the compute machines, or nodes.
+Each node is its own environment, and could be either a physical or virtual machine. Each node runs pods, which are made up of containers (see above!).
+
+This diagram shows how the parts of a Kubernetes cluster relate to one another:
+
+![kubecluster](kubecluster.png "Kubecluster")
+
+Nodes that contain the control plane components, including the API server, controller manager server, ectd etc. are often referred to as Masters.
+The master manages nodes in its Kubernetes cluster and schedules pods to run on nodes.
+
+You may often see some delegation of responsibility within these master nodes as often it can be considered *risky* behaviour to put
+all the controlling components onto each Master node. Therefore, services like etcd may often be held on their own independent node (depending
+on the size of the cluster).
+
+Below is an overview of services commonly found within a Kubernetes cluster:
+
+#### [API Server](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/)
+
+The Kubernetes API server validates and configures the data for pods, services, and replication controllers. 
+It also assigns pods to nodes and synchronizes pod information with service configuration.
+
+The main implementation of a Kubernetes API server is kube-apiserver. kube-apiserver is designed 
+to scale horizontally—that is, it scales by deploying more instances. You can run several 
+instances of kube-apiserver and balance traffic between those instances.
+
+#### [etcd](https://etcd.io/docs/)
+
+Consistent and highly-available key value store used as Kubernetes' backing store for all cluster data.
+
+etcd stores the persistent master state while other components watch etcd for changes to bring 
+themselves into the desired state. etcd can be optionally configured for high availability, 
+typically deployed with 2n+1 peer services.
+
+#### [DNS](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/)
+
+Kubernetes DNS schedules a DNS Pod and Service on the cluster, and configures the kubelets
+to tell individual containers to use the DNS Service's IP to resolve DNS names.
+
+Every Service defined in the cluster (including the DNS server itself) is assigned a DNS name. 
+
+While the other addons are not strictly required, all Kubernetes clusters should have cluster DNS,
+as many examples rely on it.
+
+Containers started by Kubernetes automatically include this DNS server in their DNS searches.
+
+#### [Kubelet](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/)
+
+An agent that runs on each node in the cluster. It makes sure that containers are running in a Pod.
+
+The kubelet takes a set of PodSpecs that are provided through various mechanisms and ensures that 
+the containers described in those PodSpecs are running and healthy.
+
+The kubelet doesn't manage containers which were not created by Kubernetes.
+
+#### [Kube-proxy](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/)
+
+kube-proxy is a network proxy that runs on each node in your cluster, implementing part of the Kubernetes Service concept.
+
+kube-proxy maintains network rules on nodes. These network rules allow network communication to your Pods from network
+sessions inside or outside of your cluster.
+
+kube-proxy uses the operating system packet filtering layer if there is one and it's
+available. Otherwise, kube-proxy forwards the traffic itself.
 
 ### K8 Commands
 
