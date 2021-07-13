@@ -155,7 +155,7 @@ There are two exercises you can now complete that look to cover the points and c
 * [Tutorial 1](https://github.com/fat-potato-uk/k8s-demo-1): This looks to cover a local installation of K8s (via Minikube)
 followed up by a series of exercises against it
   
-* [Tutorial 2] (https://github.com/fat-potato-uk/k8s-demo-2): This looks to go further into the concepts covered above as
+* [Tutorial 2](https://github.com/fat-potato-uk/k8s-demo-2): This looks to go further into the concepts covered above as
 well as use of tools like Helm
 
 ### Kube.config
