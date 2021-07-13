@@ -10,9 +10,9 @@ There are several exercises to help cover the points raised during this overview
 
 Kubernetes is a “container orchestration system”, or in their own words:
 
-“Kubernetes is a portable, extensible, open-source platform for managing containerised workloads and services, that facilitates both declarative configuration and automation. It has a large, rapidly growing ecosystem. Kubernetes services, support, and tools are widely available.”
+“***Kubernetes is a portable, extensible, open-source platform for managing containerised workloads and services, that facilitates both declarative configuration and automation. It has a large, rapidly growing ecosystem. Kubernetes services, support, and tools are widely available.***”
 
-Originally designed and developed by, it is now maintained by the Cloud Native Computing Foundation. 
+Originally designed and developed by Google, it is now maintained by the Cloud Native Computing Foundation. 
 
 To understand more about the benefits of Kubernetes (K8), we can see how things have progressed over time (again, thanks to the wonderful K8 concept pages)
 
