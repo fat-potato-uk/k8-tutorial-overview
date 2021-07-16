@@ -4,7 +4,7 @@
 
 These tutorials look to cover the basics of Kubernetes so that you can perform the basic tasks in a Kubernetes cluster!
 
-There are several exercises to help cover the points raised during this overview that help cover a the practical elements of the Kubernetes architecture. 
+There are several exercises to help cover the points raised during this overview that help cover the practical elements of the Kubernetes architecture. 
 
 ### So, what is Kubernetes
 
@@ -33,9 +33,9 @@ Well, this likely comes back to the principle identified above, loose coupling.
 
 Kubernetes entire architecture is incredibly modular, from how your nodes (servers) talk to one another, to the containerisation technology used, monitoring tools, the works! Swarm provides a lot of the functionality Kubernetes does, just not quite at the same scale, nor with anywhere near the same level of flexibility.
 
-Given this scope for customisation, Kubernetes tends to find itself fitting more naturally into large, operation environments running complex software distributions, whilst Swarm for more ad-hoc, small scale deployments.
+Given this scope for customisation, Kubernetes tends to find itself fitting more naturally into large, operational environments running complex software distributions, whilst Swarm for more ad-hoc, small scale deployments.
 
-The major difference however between the two is K8’s scope for the automatic scaling of services running within the cluster; something that Swarm, manual intervention is required to achieve. Users in K8’s can use the CPU/Memory demands of a container to inform K8 to increase or decrease the number of running instances, or alternatively, the containers own custom metrics (from the application running inside) to inform that decision.
+The major difference however between the two is K8’s scope for the automatic scaling of services running within the cluster; something that Swarm requires manual intervention to achieve. Users in K8’s can use the CPU/Memory demands of a container to inform K8 to increase or decrease the number of running instances, or alternatively, the containers own custom metrics (from the application running inside) to inform that decision.
 
 There are many other differences we could cover here, but overall, in a simple, controversy causing analogy: K8 is to an Enterprise Linux Server that Docker Swarm is to a Windows Server deployment. Both achieve a lot of the same functionality, but one is going to require you to do things exactly their way, and therefore, may not get used in the same type of scenarios the other would.
 
@@ -65,7 +65,7 @@ The components on a node include the kubelet, a container runtime, and the kube-
 
 Namespaces are intended for use in environments with many users spread across multiple teams, or projects.
 
-Namespaces provide a scope for names. Names of resources need to be unique within a namespace, 
+Namespaces provide a scope for names and activities. Names of resources need to be unique within a namespace, 
 but not across namespaces. Namespaces cannot be nested inside one another and each Kubernetes resource 
 can only be in one namespace.
 
