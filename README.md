@@ -157,6 +157,8 @@ followed up by a series of exercises against it
   
 * [Tutorial 2](https://github.com/fat-potato-uk/k8s-demo-2): This looks to go further into the concepts covered above as
 well as use of tools like Helm
+  
+* [Tutorial 3](https://github.com/fat-potato-uk/k8s-demo-3): This tutorial focuses on using `kubectl` as a way to interact with a Kubernetes environment
 
 ### K8 Components
 
